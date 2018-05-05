@@ -1,23 +1,5 @@
 window.onload = function () {
     waterfall('main', 'box');
-    var dataInt={'data':[{'src':'01.jpg'},{'src':'02.jpg'},{'src':'03.jpg'},{'src':'04.jpg'},{'src':'05.jpg'},{'src':'06.jpg'},{'src':'07.jpg'},{'src':'08.jpg'},{'src':'09.jpg'},{'src':'10.jpg'},{'src':'11.jpg'},{'src':'12.jpg'},{'src':'13.jpg'},{'src':'14.jpg'},{'src':'15.jpg'},{'src':'16.jpg'},{'src':'17.jpg'},{'src':'18.jpg'}]}
-    window.onscroll=function(){
-        if(checkScrollSlide){
-            var oParent=document.getElementById('main');
-            for(var i=0;i<dataInt.data.length;i++){
-                var oBox=document.createElement('div');
-                oBox.className='box';
-                oParent.appendChild(oBox);
-                var oPic=document.createElement('div');
-                oPic.className='pic';
-                oBox.appendChild(oPic);
-                var oImg=document.createElement('img');
-                oImg.src='images/'+dataInt.data[i].src;
-                oPic.appendChild(oImg);
-            }
-            waterfall('main','box');
-        }
-    }
 }
 
 function waterfall(parent, box) {
@@ -41,10 +23,10 @@ function waterfall(parent, box) {
             var index = getMinhIndex(hArr, minH);
             oBoxs[i].style.position = 'absolute';
             oBoxs[i].style.top = minH + 'px';
-            oBoxs[i].style.left=oBoxW*index+'px';
+            oBoxs[i].style.left = oBoxW * index + 'px';
             // oBoxs[i].style.left = oBoxs[index].offsetLeft + 'px';         
             // hArr[index]的值=原来hArr[index]的值+后来增加的图片的高
-            hArr[index]+=oBoxs[i].offsetHeight;
+            hArr[index] += oBoxs[i].offsetHeight;
         }
     }
 }
@@ -68,14 +50,4 @@ function getMinhIndex(arr, val) {
             return i;
         }
     }
-}
-
-// 检测是否具备滚动加载数据块的条件
-function checkScrollSlide(){
-    var oParent=document.getElementById('main');
-    var oBox=getByClass(oParent,'box');
-    var lastBoxH=oBoxs[oBoxs.length-1].offsetTop+Math.floor(oBoxs[oBoxs.length-1].offsetHeight/2);
-    var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
-    var height=document.body.clientHeight||document.documentElement.clientHeight;
-    return(lastBoxH<scrollTop+height)?true:false;
 }
