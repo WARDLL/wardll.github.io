@@ -4,7 +4,6 @@
 }
 
 #main{
-    width: 100px;
     position: relative;
 }
 
@@ -20,7 +19,7 @@
 }
 
 .pic img{
-    width: 720px;
+    width: 480px;
     height: auto;
 }
 
