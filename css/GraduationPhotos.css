@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0
+}
+
+#main{
+    position: relative;
+}
+
+.box{
+    padding: 15px 0 0 15px;
+    float: left;
+}
+
+.pic{
+    box-shadow: 5px 5px 5px #ccc;
+    /* 去白边 */
+    font-size: 0
+}
+
+.pic img{
+    width: 720px;
+    height: auto;
+}
