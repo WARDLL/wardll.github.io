@@ -38,6 +38,7 @@ video#bgvid {
     margin-top: -30px;
     font-size: 100px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    src: url('../fonts/impact.ttf');
     line-height: 200px;
     color: white;
     text-shadow: black 2px 2px 50px;
