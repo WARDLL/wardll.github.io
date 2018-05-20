@@ -1,122 +1,40 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html lang="en">
+
 <head>
-<embed src="sound/1.mp3" hidden="true" />
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>WARDLL</title>
-<meta name="baidu-site-verification" content="qqhCgNRr9H" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<meta name="author" content="" />
-<!-- Facebook and Twitter integration -->
-<meta property="og:title" content=""/>
-<meta property="og:image" content=""/>
-<meta property="og:url" content=""/>
-<meta property="og:site_name" content=""/>
-<meta property="og:description" content=""/>
-<meta name="twitter:title" content="" />
-<meta name="twitter:image" content="" />
-<meta name="twitter:url" content="" />
-<meta name="twitter:card" content="" />
-
-
-<link rel="shortcut  icon" type="image/x-icon" href="images/favicon.ico" media="screen"  />
-
-<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> -->
-
-<!-- Animate.css -->
-<link rel="stylesheet" href="css/animate.css">
-<!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="css/icomoon.css">
-<!-- Bootstrap  -->
-<link rel="stylesheet" href="css/bootstrap.css">
-<!-- Owl Carousel -->
-<link rel="stylesheet" href="css/owl.carousel.min.css">
-<link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-<link rel="stylesheet" href="css/style.css">
-
-
-<!-- Modernizr JS -->
-<script src="js/modernizr-2.6.2.min.js"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-<script src="js/respond.min.js"></script>
-<![endif]-->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WARDLL</title>
+    <link href="css/wardll.css" rel="stylesheet">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
 </head>
+
 <body>
-<header>
-	<div class="container text-center">
-		<div class="fh5co-navbar-brand">
-			<a class="fh5co-logo" href="index.html">--WARDLL--</a>
-		</div>
-		<nav id="fh5co-main-nav" role="navigation">
-			<ul>
-				<li><a href="index.html" class="active">Home</a></li>
-				<li><a href="http://weibo.com/wardll">Weibo</a></li>
-				<li><a href="http://wardll.lofter.com">Lofter</a></li>
-				<li><a href="https://www.instagram.com/wardll1995/">Instagram</a></li>
-				<li><a href="http://wpa.qq.com/msgrd?v=3&uin=517156300&site=qq&menu=yes">QQ</a></li>
-			</ul>
-		</nav>
-	</div>
-</header>
+    <div class="top">
+        <div class="top-up" onclick="window.open('#','_self')">
+            <img src="./images/logo.png">
+            <div class="name">WARDLL</div>
+        </div>
+        <div class="top-down">
+            <a href="http://weibo.com/wardll " target="_blank">Weibo</a>
+            <a href="https://www.instagram.com/wardll__/" target="_blank">Instagram</a>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=517156300&site=qq&menu=yes" target="_blank">QQ</a>
+            <a href="https://wardll.com/photos" target="_blank">Photos</a>
+        </div>
+    </div>
 
-<div class="owl-carousel owl-carousel1 owl-carousel-fullwidth fh5co-light-arrow animate-box" data-animate-effect="fadeIn">
-	<div class="item"><a href="images/featured-1.jpg" class="image-popup"><img src="images/featured-1.jpg" alt="image"></a></div>
-	<div class="item"><a href="images/featured-2.jpg" class="image-popup"><img src="images/featured-2.jpg" alt="image"></a></div>
-	<div class="item"><a href="images/featured-2.jpg" class="image-popup"><img src="images/featured-3.jpg" alt="image"></a></div>
-</div>
-
-<footer>
-	<div id="footer" class="fh5co-border-line">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<p>Copyright &copy; 2017.Company <a target="_blank" href="http://www.wardll.com/">WARDLL</a>.All rights reserved.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
-
-<!-- jQuery -->
-<script src="js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
-<!-- Owl carousel -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- Stellar -->
-<script src="js/jquery.stellar.min.js"></script>
-
-<!-- Main JS (Do not remove) -->
-<script src="js/main.js"></script>
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-</script>
+    <div class="main">
+        <div class="main-p">准备好面对批评，但不要惧怕。总会有人不喜欢你的言论，或者不赞同你的观点。你永远不可能取悦每一个人。
+            <div class="main-book">
+                ——《Soft Skills》
+            </div>
+            </p>
+        </div>
+        <video autoplay loop poster="./images/background.png" id="bgvid">
+            <source src="./videos/background.mp4" type="video/mp4">
+        </video>
 </body>
-</html>
 
+</html>
