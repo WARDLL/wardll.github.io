@@ -9,9 +9,13 @@
     <link href="css/wardll.css" rel="stylesheet">
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="./js/vidbg.min.js"></script>
+    <script src="./js/wardll.js"></script>
 </head>
 
-<body>
+<body style="width: 100%; height: 100%;" data-vidbg-bg="mp4: ./videos/background.mp4, 
+poster: ./images/background.png" data-vidbg-options="loop: true, muted: true, overlay: true">
     <div class="top">
         <div class="top-up" onclick="window.open('#','_self')">
             <img src="./images/logo.png">
@@ -32,9 +36,6 @@
             </div>
             </p>
         </div>
-        <video autoplay loop poster="./images/background.png" id="bgvid">
-            <source src="./videos/background.mp4" type="video/mp4">
-        </video>
 </body>
 
 </html>
