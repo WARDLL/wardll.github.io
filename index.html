@@ -38,9 +38,10 @@ poster: ./images/background.png" data-vidbg-options="loop: true, muted: true, ov
     </div>
 
     <div class="people">
+        <p>
             <script language=JavaScript>
                 var caution = false
-    
+
                 function setCookie(name, value, expires, path, domain, secure) {
                     var curCookie = name + "=" + escape(value) +
                         ((expires) ? "; expires=" + expires.toGMTString() : "") +
@@ -53,7 +54,7 @@ poster: ./images/background.png" data-vidbg-options="loop: true, muted: true, ov
                     if (confirm("Cookie exceeds 4KB and will be cut!"))
                         document.cookie = curCookie
                 }
-    
+
                 function getCookie(name) {
                     var prefix = name + "="
                     var cookieStartIndex = document.cookie.indexOf(prefix)
@@ -64,7 +65,7 @@ poster: ./images/background.png" data-vidbg-options="loop: true, muted: true, ov
                         cookieEndIndex = document.cookie.length
                     return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
                 }
-    
+
                 function deleteCookie(name, path, domain) {
                     if (getCookie(name)) {
                         document.cookie = name + "=" +
@@ -73,7 +74,7 @@ poster: ./images/background.png" data-vidbg-options="loop: true, muted: true, ov
                             "; expires=Thu, 01-Jan-70 00:00:01 GMT"
                     }
                 }
-    
+
                 function fixDate(date) {
                     var base = new Date(0)
                     var skew = base.getTime()
@@ -91,8 +92,9 @@ poster: ./images/background.png" data-vidbg-options="loop: true, muted: true, ov
                 setCookie("counter", visits, now)
                 document.write("嗨！我是WARDLL，您是第" + visits + "位访客。")
             </script>
-            </div>
-        
+        </p>
+    </div>
+
 </body>
 
 </html>

@@ -80,7 +80,12 @@
 }
 
 .people {
-    margin-top: 50px;
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    
+}
+.people p{
     text-align: center;
     font-family: '微软雅黑';
     font-size: 18px;
