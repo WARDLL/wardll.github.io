@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第四天：背景边框列表链接和更复杂的选择器</title>
+    <style>
+        h1 {
+            font-size: 32px;
+            background: #ccc;
+            display: inline;
+        }
+
+        p {
+            color: orange;
+        }
+
+        span:nth-child(1) {
+            font-weight: bolder;
+        }
+
+        span:nth-child(2) {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        ul {
+            list-style-type: square
+        }
+
+        .a-index:hover{
+            font-weight: bolder
+        }
+    </style>
+</head>
+
+<body>
+    <h1>简历</h1>
+
+    <h2>个人信息</h2>
+
+
+    <p>
+        <span>姓名：</span>
+        <span>龙灏</span>
+    </p>
+    <p>
+        <span>年龄：</span>
+        <span>23岁</span>
+    </p>
+    <p>
+        <span>学历：</span>
+        <span>本科</span>
+    </p>
+    <p>
+        <span>毕业院校：</span>
+        <span>青岛农业大学</span>
+    </p>
+    <p>
+        <span>邮箱：</span>
+        <span>longhao@wardll.com</span>
+    </p>
+    <p>
+        <span>手机：</span>
+        <span>13165426692</span>
+    </p>
+    <p>
+        <span>个人主页：</span>
+        <span>
+            <a href="http://wardll.com" class="a-index">wardll.com</a>
+        </span>
+    </p>
+
+    <h2>个人荣誉</h2>
+    <ul>
+        <li>
+            2014年
+            <ul>
+                <li>
+                    摄影协会骨干
+                </li>
+                <li>
+                    青岛农业大学校园十佳记者
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            2015年
+            <ul>
+                <li>
+                    摄影协会副会长
+                </li>
+                <li>
+                    LOFTER自由摄影协会成员
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            2016年
+            <ul>
+                <li>
+                    党委宣传部摄影组成员
+                </li>
+                <li>
+                    拍摄《朝暮青农》延时摄影
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            2017年
+            <ul>
+                <li>
+                    顺利毕业于山东大学
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
