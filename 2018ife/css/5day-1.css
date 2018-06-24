@@ -22,3 +22,10 @@ h2{
     margin-right: 50px;
 }
 
+.pow h3{
+    font-size: 16px;
+}
+
+.pow .pow1,.pow .pow2,.stu .stu1,.stu .stu2,.wor .wor1,.wor .wor2{
+    margin: 10px 0px;
+}
