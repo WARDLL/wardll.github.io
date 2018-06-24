@@ -1,31 +1,38 @@
-*{
+* {
     margin: 0;
     padding: 0
 }
 
-h1{
+h1 {
     margin: 20px 0px;
     font-size: 36px;
 }
 
-h2{
+h2 {
     margin: 20px 0px;
     font-size: 24px;
 }
 
-.msg h3,.add h3{
+.msg h3,
+.add h3 {
     display: inline;
     font-size: 16px;
 }
 
-.msg span,.add span{
+.msg span,
+.add span {
     margin-right: 50px;
 }
 
-.pow h3{
+.pow h3 {
     font-size: 16px;
 }
 
-.pow .pow1,.pow .pow2,.stu .stu1,.stu .stu2,.wor .wor1,.wor .wor2{
+.pow .pow1,
+.pow .pow2,
+.stu .stu1,
+.stu .stu2,
+.wor .wor1,
+.wor .wor2 {
     margin: 10px 0px;
 }
