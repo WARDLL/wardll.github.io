@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第七天到第八天：学习布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            font-size: 24px;
+            color: white;
+            text-align: center;
+        }
+
+        .A {
+            width: 100%;
+        }
+
+        .aLeft {
+            width: 30%;
+            height: 100px;
+            float: left;
+            background-color: red;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+        }
+
+        .aRight {
+            width: 70%;
+            height: 100px;
+            float: left;
+            background-color: blue;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+        }
+
+        .B {
+            width: 100%;
+            /* 清除浮动 */
+            overflow: hidden;
+        }
+
+        .bLeft {
+            width: 300px;
+            height: 100px;
+            float: left;
+            background-color: red;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+        }
+
+        .bRight {
+            height: 100px;
+            background-color: blue;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+            margin-left: 300px;
+        }
+
+        .C {
+            width: 100%;
+            /* 清除浮动 */
+            overflow: hidden;
+        }
+
+        .cLeft {
+            height: 100px;
+            background-color: red;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+            margin-right: 300px;
+        }
+
+        .cRight {
+            float: right;
+            width: 300px;
+            height: 100px;
+            background-color: blue;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+        }
+
+        .D {
+            width: 100%;
+        }
+
+        .D div {
+            float: left;
+            position: relative;
+            height: 100px;
+        }
+
+        .dLeft {
+            width: 200px;
+            margin-left: -100%;
+            background-color: red;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+        }
+
+        .dCenter {
+            width: 100%;
+            background-color: black;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+        }
+
+        .dRight {
+            width: 200px;
+            background-color: blue;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+            right: 200px;
+            margin-right: -200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="A">
+        <div class="aLeft">
+            <p>30%</p>
+        </div>
+        <div class="aRight">
+            <p>70%</p>
+        </div>
+    </div>
+
+    <div class="B">
+        <div class="bLeft">
+            <p>固定宽度</p>
+        </div>
+        <div class="bRight">
+            <p>随浏览器宽度改变而改变</p>
+        </div>
+    </div>
+
+    <div class="C">
+        <div class="cRight">
+            <p>固定宽度</p>
+        </div>
+        <div class="cLeft">
+            <p>随浏览器宽度改变而改变 但是右侧定宽左侧变宽需要更改html顺序</p>
+        </div>
+    </div>
+
+    <div class="D">
+        <div class="dCenter">
+            <p>随浏览器宽度改变而改变</p>
+        </div>
+        <div class="dLeft">
+            <p>固定宽度</p>
+        </div>
+        <div class="dRight">
+            <p>固定宽度</p>
+        </div>
+    </div>
+</body>
+
+</html>
