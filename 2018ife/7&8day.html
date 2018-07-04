@@ -94,6 +94,7 @@
 
         .D {
             width: 100%;
+            height: 100px;
         }
 
         .D div {
@@ -127,6 +128,41 @@
             box-sizing: border-box;
             right: 200px;
             margin-right: -200px;
+        }
+
+        .E {
+            width: 100%;
+        }
+
+        .eRight {
+            height: 100px;
+            background-color: blue;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+            margin-left: 400px;
+        }
+
+        .eLeft {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+        }
+
+        .eCenter {
+            width: 200px;
+            height: 100px;
+            background-color: black;
+            border: 5px solid #cccccc;
+            /* 内边框 */
+            box-sizing: border-box;
+            position: absolute;
+            left: 200px;
         }
     </style>
 </head>
@@ -168,6 +204,19 @@
         </div>
         <div class="dRight">
             <p>固定宽度</p>
+        </div>
+    </div>
+
+    <div class="E">
+
+        <div class="eLeft">
+            <p>固定宽度</p>
+        </div>
+        <div class="eCenter">
+            <p>固定宽度</p>
+        </div>
+        <div class="eRight">
+            <p>随浏览器宽度改变而改变</p>
         </div>
     </div>
 </body>
