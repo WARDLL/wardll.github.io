@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body{
+    width: 100%;
+    height: 100%;
+}
 /* 第一模块 */
 
 #header{
@@ -16,7 +20,7 @@
     text-align: center;
     font-size: 62px;
     font-family: Montserrat;
-    font-weight:bold;
+    font-weight: lighter;
     color: white
 }
 #header .headerP{
@@ -24,7 +28,7 @@
     width: 800px;
     font-size: 20px;
     font-family: Montserrat;
-    font-weight:bold;
+    font-weight: lighter;
     text-indent: 2em;
     text-align: center;
     color: white;
@@ -42,7 +46,7 @@
     text-align: center;
     font-size: 16px;
     font-family: Montserrat;
-    font-weight:bold;
+    font-weight: bold;
     letter-spacing:1px;
     color: white;
 }
@@ -51,7 +55,7 @@
     text-align: center;
     font-size: 12px;
     font-family: Montserrat;
-    font-weight:bold;
+    font-weight: bold;
     letter-spacing:1px;
     color: white;
     opacity: 0.3;
@@ -72,7 +76,7 @@
     font-size: 14px;
     font-family: Montserrat;
     text-indent: 2em;
-    font-weight:bold;
+    font-weight: bold;
     color: white;
 }
 #header .headerSignup .headerSingnupMain .headerSingnupMainButton{
@@ -86,14 +90,15 @@
 /* 第二模块 */
 #main1{
     width: 100%;
-    height: 70px;
+    height: 900px;
+    overflow: hidden;
 }
 #main1 h2{
     margin-top: 100px;
     text-align: center;
     font-size: 14px;
     font-family: Montserrat;
-    font-weight:bold;
+    font-weight: lighter;
     letter-spacing:2px;
 }
 #main1 .main1Ph{
@@ -102,6 +107,7 @@
     font-size: 42px;
     font-family: Montserrat;
     letter-spacing:2px;
+    font-weight: lighter;
 }
 #main1 .main1MsgMsg {
     float: left;
@@ -118,7 +124,7 @@
     margin-bottom: 15px;
     font-size: 20px;
     font-family: Montserrat;
-    font-weight:bold;
+    font-weight: bold;
 
 }
 #main1 .main1MsgMsg .main1Msgtext p{
@@ -126,7 +132,7 @@
     font-size: 16px;
     line-height: 26px;
     font-family: Montserrat;
-    font-weight:bold;
+    font-weight: lighter;
 }
 
 #main2{
@@ -137,15 +143,17 @@
     /* 父元素设置overflow:hideen;避免子元素margin导致父元素位移 */
     overflow:hidden;
 }
-#main2 h3{
+#main2 h2{
     font-size: 42px;
     font-family: Montserrat;
+    font-weight: lighter;
     color: white;
     margin: 150px 0px 50px 250px;
 }
 #main2 p{
     font-size: 18px;
     font-family: Montserrat;
+    font-weight: lighter;
     color: white;
     margin: 0px 0px 70px 250px;
 }
@@ -167,4 +175,43 @@
     background: rgba(0, 0, 0, 0);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.3)
+}
+
+#main3{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+#main3 h2{
+    font-size: 42px;
+    font-family: Montserrat;
+    font-weight: lighter;
+    margin: 100px 0;
+    text-align: center;
+    
+}
+#main3 .main3Msg{
+    width: 1000px;
+    height: 400px;
+    clear: both;
+    margin: 0 auto;
+}
+#main3 .main3Msg .main3MsgMsg{
+    width: 250px;
+    height: 400px;
+    float: left;
+}
+#main3 .main3Msg .main3MsgMsg:nth-child(2){
+    margin: 0 125px;
+}
+#main3 .main3Msg .main3MsgMsg img{
+    display: block;
+    margin: 0 auto 50px auto;
+}
+#main3 .main3Msg .main3MsgMsg p{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: lighter;
 }
