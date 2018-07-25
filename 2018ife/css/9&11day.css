@@ -256,3 +256,33 @@ body{
     float: left;
     margin-top: 75px;
 }
+
+#main5{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+#main5 h2{
+    font-size: 42px;
+    font-family: Montserrat;
+    font-weight: lighter;
+    text-align: center;
+    margin: 100px 0 30px 0;
+}
+#main5 p{
+    width: 750px;
+    font-size: 18px;
+    font-family: Montserrat;
+    font-weight: lighter;
+    text-align: center;
+    margin: 0 auto 50px auto;
+}
+#main5 .main5Msg{
+    width: 970px;
+    height: 710px;
+    margin: 0 auto 100px auto;
+}
+#main5 .main5Msg img:nth-child(1),#main5 .main5Msg img:nth-child(3){
+    margin-right: 24px;
+}
+#main5 .main5Msg img:nth-child(1),#main5 .main5Msg img:nth-child(2){
+    margin-bottom: 24px;
+}
