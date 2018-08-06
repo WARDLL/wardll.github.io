@@ -10,6 +10,10 @@ body {
     height: 100%;
 }
 
+.main{
+    height: 740px;
+}
+
 h1 {
     margin: 50px 0px;
     font-size: 36px;
@@ -60,6 +64,5 @@ h2 {
 
 .right{
     float: left;
-    height: 100%;
     padding: 20px 20px 0px 20px;
 }
