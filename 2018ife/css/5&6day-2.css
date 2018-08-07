@@ -66,3 +66,19 @@ h2 {
     float: left;
     padding: 20px 20px 0px 20px;
 }
+
+.main .left #btnHi{
+    width: 100px;
+    height: 50px;
+    font-size: 24px;
+    border: 0px;
+    border-radius: 10px;
+    color: #72a5f4;
+    margin-bottom: 50px;
+}
+
+.main .left p{
+    font-size: 18px;
+    color: white;
+    display: none;
+}
