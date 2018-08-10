@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>第二十到第二十一天：让你和页面对话·练习B</title>
+    <style>
+        select {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <label>
+        <input id="school" name="status" type="radio" onclick="radioSchool()"> School
+    </label>
+    <label>
+        <input id="company" name="status" type="radio" onclick="radioCompany()"> Company
+    </label>
+
+    <select id="school-select"></select>
+    <option>北京邮电大学</option>
+    <option>黑龙江大学</option>
+    <option>华中科技大学</option>
+    </select>
+
+    <select id="company-select">
+        <option>百度</option>
+        <option>爱奇艺</option>
+    </select>
+
+    <script>
+        var inputSchool=document.getElementById('school');
+        var inputCompany=document.getElementById('company');
+        var selectSchool=document.getElementById('school-select');
+        var selectCompany=document.getElementById('company-select');
+
+        function radioSchool(){
+                selectSchool.style.display='';
+                selectCompany.style.display='none'
+            
+        }
+        function radioCompany(){
+                selectSchool.style.display='none';
+                selectCompany.style.display='';
+            
+        }
+    </script>
+</body>
+
+</html>
