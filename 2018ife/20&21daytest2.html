@@ -21,7 +21,7 @@
         <input id="company" name="status" type="radio" onclick="radioCompany()"> Company
     </label>
 
-    <select id="school-select"></select>
+    <select id="school-select">
     <option>北京邮电大学</option>
     <option>黑龙江大学</option>
     <option>华中科技大学</option>
@@ -39,14 +39,12 @@
         var selectCompany=document.getElementById('company-select');
 
         function radioSchool(){
-                selectSchool.style.display='';
+                selectSchool.style.display='inline';
                 selectCompany.style.display='none'
-            
         }
         function radioCompany(){
                 selectSchool.style.display='none';
-                selectCompany.style.display='';
-            
+                selectCompany.style.display='inline';
         }
     </script>
 </body>
