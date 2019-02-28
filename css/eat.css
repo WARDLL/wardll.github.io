@@ -11,7 +11,7 @@
   text-align: center;
   font-size: 100px;
   font-weight: bold;
-  color: #F00;
+  color: rgb(249, 204, 226);
 }
 
 .btns {
@@ -25,7 +25,7 @@
   width: 300px;
   height: 200px;
   line-height: 200px;
-  background: #036;
+  background: rgb(249, 204, 226);
   border: 1px solid #eee;
   border-radius: 7px;
   margin-top: 100px;
