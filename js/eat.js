@@ -39,5 +39,5 @@ function playFun() {
 function stopFun() {
    clearInterval(timer);
    var play = document.getElementById('play');
-   play.style.background = '#036';
+   play.style.background = 'rgb(249, 204, 226);';
 }
