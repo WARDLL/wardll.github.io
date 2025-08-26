@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    height: 500px;
+}
+
+.top-up {
+    width: 1000px;
+    height: 200px;
+    margin: 0 auto;
+    padding-top: 50px
+}
+
+.top-up img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.name {
+    margin-top: -30px;
+    font-size: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    src: url('../fonts/impact.ttf');
+    line-height: 200px;
+    color: white;
+    text-shadow: black 2px 2px 50px;
+    text-align: center;
+}
+
+.top-down {
+    width: 1000px;
+    height: 100px;
+    margin: 150px auto;
+    text-align: center;
+}
+
+.top-down a {
+    margin: 0px 20px;
+    text-decoration: none;
+    font-family: '微软雅黑';
+    font-size: 24px;
+    color: white;
+    text-shadow: black 2px 2px 10px;
+}
+
+.main {
+    width: 1000px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.main-p {
+    display: block;
+    width: 500px;
+    height: 200px;
+    text-indent: 2em;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid white;
+    font-family: '微软雅黑';
+    font-size: 24px;
+    color: white;
+    text-shadow: black 2px 2px 10px;
+    position: relative;
+}
+
+.main-book {
+    position: absolute;
+    font-family: '微软雅黑';
+    font-size: 24px;
+    color: white;
+    text-shadow: black 2px 2px 10px;
+    bottom: 20px;
+    right: 20px;
+}
+
+.people {
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    
+}
+.people p{
+    text-align: center;
+    font-family: '微软雅黑';
+    font-size: 18px;
+    color: white;
+    text-shadow: black 1px 1px 5px;
+}

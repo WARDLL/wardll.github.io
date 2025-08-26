@@ -1,43 +1,668 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Keywords" content="WARDLL,龙灏,wardll,wardll1995,WARDLL1995">
-    <meta name="Description" content="WARDLL是我的个人网站，用于展示个人信息。">
-    <title>WARDLL</title>
-    <link href="css/wardll.css" rel="stylesheet">
-    <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="./js/vidbg.min.js"></script>
-    <script src="./js/wardll.js"></script>
+    <title>使命召唤：战争地带 - 武器配装分享</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #FA5A00;
+            --dark-bg: #0d1b2a;
+            --card-bg-color: rgba(15, 109, 133, 0.55);
+            --text-color: #e0e0e0;
+            --card-border: #2a4d7a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background: url('images/body.png') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+            z-index: -1;
+        }
+
+        header {
+            background: url('images/header.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(255, 115, 0, 0.349);
+            position: relative;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.295);
+        }
+
+        header h1,
+        header p {
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.8rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: rgba(26, 54, 93, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--card-border);
+        }
+
+        .intro h2 {
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .weapons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .weapon-card {
+            background: var(--card-bg-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--card-border);
+        }
+
+        .weapon-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .weapon-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .weapon-info {
+            padding: 1.8rem;
+        }
+
+        .weapon-name {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .game-mode {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+            font-weight: bold;
+        }
+
+        .weapon-id {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.8rem;
+            border-radius: 6px;
+        }
+
+        .id-label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: #ccc;
+        }
+
+        .id-code {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            color: #fff;
+            flex-grow: 1;
+            font-size: 0.9rem;
+            user-select: all;
+        }
+
+        .copy-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+        }
+
+        .copy-btn:hover {
+            background: #ff3b30;
+        }
+
+        .copy-btn i {
+            margin-right: 5px;
+        }
+
+        .weapon-features h3 {
+            margin: 1.2rem 0 0.8rem 0;
+            font-size: 1.1rem;
+            color: #fff;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .weapon-features ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .weapon-features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .weapon-features li:before {
+            content: "➣";
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            background: url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+            position: relative;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 27, 42, 0.9);
+        }
+
+        footer p {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .weapons-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .weapon-info {
+                padding: 1.2rem;
+            }
+
+            .weapon-id {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .copy-btn {
+                margin-top: 0.5rem;
+                align-self: flex-end;
+            }
+        }
+
+        /* 通知弹窗样式 */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            border-left: 4px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* 添加一些动画效果 */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .copied-effect {
+            animation: pulse 0.5s ease;
+        }
+
+        .add-tool {
+            background: rgba(26, 54, 93, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--card-border);
+        }
+
+        .add-tool h3 {
+            color: #fff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .card-template {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .card-template code {
+            color: #e0e0e0;
+            display: block;
+            white-space: pre;
+        }
+
+        .instructions {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /*收款码↓*/
+        .intro-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .intro-text {
+            flex: 1;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .qrcode {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 150px;
+            max-width: 200px;
+        }
+
+        .qrcode img {
+            width: 100%;
+            height: auto;
+            max-width: 150px;
+            max-height: 150px;
+            object-fit: contain;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            border: 2px solid var(--accent-color);
+        }
+
+        .qrcode p {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .intro-content {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .intro-text {
+                order: 1;
+                padding: 0;
+                margin-bottom: 1rem;
+            }
+
+            .qrcode {
+                order: 2;
+                max-width: 100%;
+            }
+
+            .qrcode.left,
+            .qrcode.right {
+                order: 2;
+            }
+        }
+
+        /*收款码上*/
+    </style>
 </head>
 
-<body style="width: 100%; height: 100%;" data-vidbg-bg="mp4: ./videos/background.mp4, 
-poster: ./images/background.png" data-vidbg-options="loop: true, muted: true, overlay: true">
-    <div class="top">
-        <div class="top-up" onclick="window.open('#','_self')">
-            <img src="./images/logo.png">
-            <h1 class="name">WARDLL</h1>
-        </div>
-        <div class="top-down">
-            <a href="http://weibo.com/wardll " target="_blank" title="weibo">Weibo</a>
-            <a href="https://www.instagram.com/wardll__/" target="_blank" title="instagram" rel="nofollow">Instagram</a>
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=517156300&site=qq&menu=yes" target="_blank" title="qq" rel="nofollow">QQ</a>
-            <a href="https://wardll.github.io/photos" target="_blank" title="photos" rel="nofollow">Photos</a>
-        </div>
-    </div>
+<body>
+    <header>
+        <h1>使命召唤：战争地带</h1>
+    </header>
+    <div class="intro">
+        <div class="intro-content">
+            <div class="qrcode left">
+                <img src="images/wechat_qr.jpg" alt="微信收款码">
+                <p>微信赞助支持</p>
+            </div>
 
-    <div class="main">
-        <div class="main-p">
-            <p>准备好面对批评，但不要惧怕。总会有人不喜欢你的言论，或者不赞同你的观点。你永远不可能取悦每一个人。</p>
-            <div class="main-book">
-                ——《Soft Skills》
+            <div class="intro-text">
+                <h2>WARDLL自用武器配装</h2>
+                <p>点击武器ID旁的"复制"按钮即可一键复制配装代码</p>
+                <p>如果视频/配装帮助到了你</p>
+                <p>可以选择扫描二维码支持一下</p>
+            </div>
+
+            <div class="qrcode right">
+                <img src="images/alipay_qr.jpg" alt="支付宝收款码">
+                <p>支付宝赞助支持</p>
             </div>
         </div>
     </div>
+
+    <div class="weapons-grid" id="weaponsGrid">
+        <!-- 新添加的武器卡片应该放在这里 -->
+
+        <!-- 武器配装卡片示例 -->
+        <div class="weapon-card">
+            <img src="images\LC10.png" alt="LC10配装" class="weapon-image">
+            <div class="weapon-info">
+                <h2 class="weapon-name">LC10</h2>
+                <span class="game-mode">战区通用</span>
+
+                <div class="weapon-id">
+                    <span class="id-label">ID:</span>
+                    <span class="id-code">MP5SMG2023COD</span>
+                    <button class="copy-btn" data-code="MP5SMG2023COD">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                </div>
+
+                <div class="weapon-features">
+                    <h3>配件选择</h3>
+                    <ul>
+                        <li>枪托：平衡枪托</li>
+                        <li>枪管：长枪管</li>
+                        <li>弹匣：扩容弹匣Ⅰ</li>
+                        <li>握把：人体工程学握把</li>
+                        <li>下挂：游侠前握把</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="weapon-card">
+            <img src="images\FFAR.png" alt="FFAR1配装" class="weapon-image">
+            <div class="weapon-info">
+                <h2 class="weapon-name">FFAR1</h2>
+                <span class="game-mode">战区通用</span>
+
+                <div class="weapon-id">
+                    <span class="id-label">ID:</span>
+                    <span class="id-code">HDRSN1P3R2023X</span>
+                    <button class="copy-btn" data-code="HDRSN1P3R2023X">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                </div>
+
+                <div class="weapon-features">
+                    <h3>配件选择</h3>
+                    <ul>
+                        <li>膛口：后座辅助器</li>
+                        <li>枪管：长枪管</li>
+                        <li>弹匣：扩容弹匣Ⅱ</li>
+                        <li>握把：人体工程学握把</li>
+                        <li>下挂：垂直前握把</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="weapon-card">
+            <img src="images\CR56.png" alt="CR-56艾麦克斯配装" class="weapon-image">
+            <div class="weapon-info">
+                <h2 class="weapon-name">CR-56艾麦克斯</h2>
+                <span class="game-mode">战区通用</span>
+
+                <div class="weapon-id">
+                    <span class="id-label">ID:</span>
+                    <span class="id-code">C0D2M4A1WZ2023</span>
+                    <button class="copy-btn" data-code="C0D2M4A1WZ2023">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                </div>
+
+                <div class="weapon-features">
+                    <h3>配件选择</h3>
+                    <ul>
+                        <li>膛口：后座辅助器</li>
+                        <li>枪管：长枪管</li>
+                        <li>弹匣：扩容弹匣Ⅱ</li>
+                        <li>握把：人体工程学握把</li>
+                        <li>模组：后座弹簧</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="weapon-card">
+            <img src="images\SWAT.png" alt="SWAT5.56配装" class="weapon-image">
+            <div class="weapon-info">
+                <h2 class="weapon-name">SWAT5.56</h2>
+                <span class="game-mode">战区通用</span>
+
+                <div class="weapon-id">
+                    <span class="id-label">ID:</span>
+                    <span class="id-code">WZD2SWATWZ5556</span>
+                    <button class="copy-btn" data-code="WZD2SWATWZ5556">
+                        <i class="fas fa-copy"></i> 复制
+                    </button>
+                </div>
+
+                <div class="weapon-features">
+                    <h3>配件选择</h3>
+                    <ul>
+                        <li>膛口：一体式消音器</li>
+                        <li>下挂：垂直前握把</li>
+                        <li>弹匣：全自动扩容弹匣</li>
+                        <li>枪托：战斗枪托</li>
+                        <li>模组：SWAT5.56格雷改装</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <footer>
+        <p>使命召唤：战争地带武器配装分享 &copy; 2023</p>
+        <p>关注我的直播频道获取更多游戏技巧</p>
+    </footer>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>配装ID已成功复制到剪贴板！</span>
+    </div>
+
+    <script>
+        // 复制代码功能
+        function copyCode(code) {
+            // 创建临时文本区域
+            const textArea = document.createElement('textarea');
+            textArea.value = code;
+            document.body.appendChild(textArea);
+
+            // 选择并复制文本
+            textArea.select();
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showNotification();
+
+                    // 添加复制成功的效果
+                    const buttons = document.querySelectorAll('.copy-btn');
+                    buttons.forEach(btn => {
+                        if (btn.getAttribute('data-code') === code) {
+                            btn.classList.add('copied-effect');
+                            setTimeout(() => {
+                                btn.classList.remove('copied-effect');
+                            }, 500);
+
+                            // 临时更改按钮文本
+                            const originalText = btn.innerHTML;
+                            btn.innerHTML = '<i class="fas fa-check"></i> 已复制';
+                            setTimeout(() => {
+                                btn.innerHTML = originalText;
+                            }, 2000);
+                        }
+                    });
+                }
+            } catch (err) {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动选择ID代码并复制');
+            }
+
+            // 移除临时文本区域
+            document.body.removeChild(textArea);
+        }
+
+        // 显示通知
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // 添加事件监听器
+        document.addEventListener('DOMContentLoaded', () => {
+            // 为所有复制按钮添加点击事件
+            const copyButtons = document.querySelectorAll('.copy-btn');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const code = this.getAttribute('data-code');
+                    copyCode(code);
+                });
+            });
+
+            // 添加卡片加载动画
+            const cards = document.querySelectorAll('.weapon-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }, 100 + (index * 100));
+            });
+
+            // 添加键盘快捷键支持
+            document.addEventListener('keydown', (e) => {
+                // 按ESC键关闭通知
+                if (e.key === 'Escape') {
+                    const notification = document.getElementById('notification');
+                    notification.classList.remove('show');
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
